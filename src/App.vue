@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <nav class="grid grid-cols-6">
+    <nav class="grid grid-rows-6 bg-black text-white">
       <router-link to="/">Home</router-link>
       <router-link to="/about">About</router-link>
       <router-link to="/create-pokemon">Register Pokemon</router-link>
@@ -13,8 +13,6 @@
 </template>
 
 <style lang="scss">
-
-@import url('./views/output.css');
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
