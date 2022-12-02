@@ -8,12 +8,13 @@
       <router-link to="/edit-pokemon">Edit Pokemon</router-link>
       <router-link to="/delete-pokemon">Delete Pokemon</router-link>
     </nav>
-    <router-view/>
+    <section class="w-full h-screen bg-cyan-600 p-6">
+      <router-view class="m-auto bg-red-600 w-2/5 h-2/4"/>
+    </section>
   </div>
 </template>
 
 <style lang="scss">
-
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
