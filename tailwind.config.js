@@ -148,6 +148,7 @@ module.exports = {
       'gradient-to-bl': 'linear-gradient(to bottom left, var(--tw-gradient-stops))',
       'gradient-to-l': 'linear-gradient(to left, var(--tw-gradient-stops))',
       'gradient-to-tl': 'linear-gradient(to top left, var(--tw-gradient-stops))',
+      pokedex: "url('/src/assets/pokedex.png')",
     },
     backgroundOpacity: ({ theme }) => theme('opacity'),
     backgroundPosition: {
@@ -549,6 +550,7 @@ module.exports = {
       '3/6': '50%',
       '4/6': '66.666667%',
       '5/6': '83.333333%',
+      101: '32rem',
       full: '100%',
       screen: '100vh',
       min: 'min-content',
@@ -927,6 +929,7 @@ module.exports = {
       '9/12': '75%',
       '10/12': '83.333333%',
       '11/12': '91.666667%',
+      100: '34rem',
       full: '100%',
       screen: '100vw',
       min: 'min-content',
