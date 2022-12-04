@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: ['./public/**/*.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   presets: [],
@@ -149,6 +150,8 @@ module.exports = {
       'gradient-to-l': 'linear-gradient(to left, var(--tw-gradient-stops))',
       'gradient-to-tl': 'linear-gradient(to top left, var(--tw-gradient-stops))',
       pokedex: "url('/src/assets/pokedex.png')",
+      poke: "url('/src/assets/poke-wallpaper.jpg')",
+      mainscreen: "url('/src/assets/mainscreen-bg.jpg')",
     },
     backgroundOpacity: ({ theme }) => theme('opacity'),
     backgroundPosition: {

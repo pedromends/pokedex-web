@@ -16,11 +16,6 @@ const routes = [
     component: MainMenu,
   },
   {
-    path: '/about',
-    name: 'about',
-    component: AboutView,
-  },
-  {
     path: '/create-pokemon',
     name: 'createpokemon',
     component: CreateView,
@@ -39,6 +34,11 @@ const routes = [
     path: '/delete-pokemon',
     name: 'deletepokemon',
     component: DeleteView,
+  },
+  {
+    path: '/about',
+    name: 'about',
+    component: AboutView,
   },
 ];
 

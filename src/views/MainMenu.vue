@@ -1,5 +1,5 @@
 <template>
-  <nav class="grid grid-rows-5 text-black">
+  <nav class="grid grid-rows-5 bg-white pt-2">
     <!-- <router-link to="/">Home</router-link> -->
     <router-link to="/create-pokemon">Registrar Pokémon</router-link>
     <router-link to="/list-pokemon">Listar Pokémons</router-link>
@@ -20,3 +20,10 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+
+nav > *:hover{
+  color:black;
+}
+</style>
