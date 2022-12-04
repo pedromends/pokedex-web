@@ -1,15 +1,15 @@
 <!-- eslint-disable max-len -->
 <template>
-  <div id="app">
+  <v-app id="app">
     <section class="w-full h-screen bg-green-500 flex justify-center bg-poke bg-repeat-round text-[13px]">
       <Pokedex/>
     </section>
-  </div>
+  </v-app>
 </template>
 
 <script>
 // @ is an alias to /src
-import Pokedex from '@/views/Pokedex.vue';
+import Pokedex from '@/components/Pokedex.vue';
 
 export default {
   name: 'MainMenu',
@@ -32,4 +32,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: white;
 }
+
+.v-application p {
+  margin-bottom: 0px!important;
+}
+
 </style>
