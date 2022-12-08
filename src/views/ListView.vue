@@ -1,6 +1,6 @@
 <!-- eslint-disable max-len -->
 <template>
-  <v-carousel v-model="model" height="192" hide-delimiters>
+  <v-carousel height="192" hide-delimiters>
     <v-carousel-item v-for="(pokemon, i) in pokemonList" :key="i">
       <p class="mt-3 text-lg">{{ pokemon.nome }}</p>
       <img alt="pokemon" class="w-32  ml-auto mr-auto" v-bind:src="`data:image/png;base64,${pokemon.imagem}`"/>
@@ -9,6 +9,7 @@
 </template>
 
 <script>
+
 import { listPokemons } from '@/services/PokemonService';
 
 export default {
@@ -30,4 +31,5 @@ export default {
     });
   },
 };
+
 </script>

@@ -24,7 +24,7 @@ export default {
 <style scoped>
 
 nav > *:hover{
-  color:rgb(15, 15, 126)!important;
+  color:orange!important;
   font-size:16px;
   transition: 0.35s ease-out;
 }
