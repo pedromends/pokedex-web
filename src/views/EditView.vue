@@ -1,9 +1,7 @@
-<!-- eslint-disable vuejs-accessibility/form-control-has-label -->
-<!-- eslint-disable max-len -->
 <template>
   <section class="pt-2">
     <p class="pt-1 text-black text-base">Editar Pokémon</p>
-    <ul class="h-32 text-left">
+    <ul class="h-32 mt-1 text-left">
       <li class="mb-3" v-for="(pokemon,i) in pokemonList" :key="i">
         <a>{{ pokemon.nome }}</a>
       </li>

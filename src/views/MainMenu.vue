@@ -26,10 +26,10 @@ export default {
 nav > *:hover{
   color:orange!important;
   font-size:16px;
-  transition: 0.35s ease-out;
 }
 
 a{
   color:black!important;
+  transition: 0.35s ease-out;
 }
 </style>
