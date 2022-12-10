@@ -16,3 +16,12 @@ export const createPokemon = (form) => api.request({
   url: '/pokedex/criar',
   data: form,
 });
+
+export const updatePokemon = (form) => api.request({
+  headers: {
+    'Content-Type': 'multipart/form-data',
+  },
+  method: 'post',
+  url: '/pokedex/atualizar',
+  data: form,
+});

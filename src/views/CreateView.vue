@@ -33,11 +33,12 @@ export default {
       pokeName: undefined,
       pokeType: undefined,
       pokeImg: undefined,
-      newPokemon: new FormData(),
+      newPokemon: undefined,
     };
   },
   methods: {
     onImageUpload() {
+      this.newPokemon = new FormData();
       const file = this.$refs.upPokeImage.files[0];
       this.newPokemon.append('imagem', file);
       this.submit();
@@ -51,8 +52,11 @@ export default {
       }).catch((error) => {
         console.log(error);
       }).finally(() => {
-        this.pokeName = '';
-        this.pokeType = '';
+        alert('Pokemon registrado com sucesso');
+        this.pokeName = undefined;
+        this.pokeType = undefined;
+        this.pokeImg = undefined;
+        this.newPokemon = undefined;
       });
     },
   },
