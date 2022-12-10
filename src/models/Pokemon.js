@@ -1,7 +1,7 @@
 export default class Pokemon {
   constructor(pokeName, pokeType, pokeImg) {
-    this.pokeName = pokeName;
-    this.pokeType = pokeType;
-    this.pokeImg = pokeImg;
+    this.nome = pokeName;
+    this.tipo = pokeType;
+    this.imagem = pokeImg;
   }
 }

@@ -1,6 +1,6 @@
 <template>
   <section class="pt-2">
-    <p class="pt-1 text-black text-base">Deletar Pokémon</p>
+    <p class="pt-1 text-black text-lg">Deletar Pokémon</p>
     <ul class="h-32 mt-1 text-left">
       <li class="mb-3" v-for="(pokemon,i) in pokemonList" :key="i">
         <a>{{ pokemon.nome }}</a>
@@ -43,7 +43,7 @@ a{
 }
 
 a:hover{
-  color:orange!important;
+  color:rgb(255, 166, 0)!important;
   font-size: 18px;
 }
 </style>
