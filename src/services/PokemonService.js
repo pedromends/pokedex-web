@@ -20,8 +20,9 @@ export const createPokemon = (form) => api.request({
 export const updatePokemon = (form) => api.request({
   headers: {
     'Content-Type': 'multipart/form-data',
+    'Access-Control-Allow-Origin': '*',
   },
-  method: 'post',
+  method: 'put',
   url: '/pokedex/atualizar',
   data: form,
 });

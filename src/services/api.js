@@ -10,5 +10,6 @@ const api = axios.create({
 });
 
 api.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
+api.defaults.headers.put['Access-Control-Allow-Origin'] = '*';
 
 export default api;

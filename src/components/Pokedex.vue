@@ -1,6 +1,6 @@
 <!-- eslint-disable max-len -->
 <template>
-  <section id="pokedex" class="absolute top-16 w-100 h-101 flex justify-center align-middle bg-pokedex bg-no-repeat text-center">
+  <section id="pokedex" class="absolute top-4 w-100 h-101 flex justify-center align-middle bg-pokedex bg-no-repeat text-center">
     <MainScreen/>
   </section>
 </template>
