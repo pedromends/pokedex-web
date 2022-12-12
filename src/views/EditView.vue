@@ -13,7 +13,7 @@
     </section>
     <section class="pt-2" v-if="editing">
       <p class="text-black">Editando</p>
-      <form class="flex flex-col gap-2" @submit="update()" enctype="multipart/form-data">
+      <div class="flex flex-col gap-2" enctype="multipart/form-data">
         <div class="pt-1 grow">
           <input class="w-40 pl-1 text-black rounded-md border-solid bg-white border-gray-900 border-2"
             placeholder="Nome"
@@ -25,7 +25,7 @@
             placeholder="Tipo" type="text" id="type" v-model="editingItem.tipo"
           />
         </div>
-        <div class="w-full pt-1 pb-1 flex justify-between items-center content-center gap-3">
+        <div class="w-full pt-1 pb-1 flex justify-center items-center content-center gap-5">
           <img alt="pokemon" class="w-14" v-bind:src="`data:image/png;base64,${editingItem.imagem}`"/>
           <div>
             <input placeholder="Imagem" accept="image/png, image/jpeg"
@@ -34,17 +34,20 @@
               @change="onImageUpload"
             />
           </div>
-          <button class="h-4 text-center pl-1 text-xxxs rounded-md border-solid text-black border-gray-900 border-2 custom-button"
-            @click="update(editingItem)" type="submit">Atualizar
+          <button class="h-6 text-center pl-1 text-xxxs rounded-md border-solid text-black border-gray-900 border-2 custom-button"
+            @click="update()">Atualizar
           </button>
         </div>
-      </form>
+      </div>
     </section>
   </div>
 </template>
 
 <script>
-import { listPokemons, updatePokemon } from '@/services/PokemonService';
+import {
+  listPokemons,
+  updatePokemon,
+} from '@/services/PokemonService';
 
 export default {
   data() {
@@ -52,7 +55,7 @@ export default {
       pokemonList: undefined,
       editing: false,
       editingItem: {},
-      updatedItem: undefined,
+      updatedItem: new FormData(),
     };
   },
   created() {
@@ -71,23 +74,25 @@ export default {
         tipo: pokemon.tipo,
         imagem: pokemon.imagem,
       };
+      this.updatedItem.append('imagem', pokemon.imagem);
     },
     onImageUpload() {
-      this.updatedItem = new FormData();
       const file = this.$refs.upPokeImage.files[0];
-      this.updatedItem.append('imagem', file);
+      this.updatedItem.set('imagem', file);
     },
     update() {
-      this.updatedItem.append('id', this.editingItem.id);
-      this.updatedItem.append('nome', this.editingItem.nome);
-      this.updatedItem.append('tipo', this.editingItem.tipo);
+      this.updatedItem.set('id', this.editingItem.id);
+      this.updatedItem.set('nome', this.editingItem.nome);
+      this.updatedItem.set('tipo', this.editingItem.tipo);
+
+      // console.log(this.updatedItem);
 
       updatePokemon(this.updatedItem).then((response) => {
-        console.log(JSON.stringify(response.data));
+        console.log(JSON.stringify(response));
       }).catch((error) => {
         console.log(JSON.stringify(error));
       }).finally(() => {
-        alert('Pokemon registrado com sucesso');
+        alert('Pokemon atualizado com sucesso');
         this.updatedItem = undefined;
       });
     },
