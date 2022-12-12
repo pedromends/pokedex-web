@@ -25,7 +25,6 @@ export default {
   created() {
     listPokemons().then((response) => {
       this.pokemonList = response.data;
-      console.log(this.pokemonList);
     }).catch((error) => {
       console.log('erro', error);
     });

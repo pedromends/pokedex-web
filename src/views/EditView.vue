@@ -29,7 +29,7 @@
           <img alt="pokemon" class="w-14" v-bind:src="`data:image/png;base64,${editingItem.imagem}`"/>
           <div>
             <input placeholder="Imagem" accept="image/png, image/jpeg"
-              class="w-14"
+              class="w-14 text-black"
               type="file" ref='upPokeImage'
               @change="onImageUpload"
             />

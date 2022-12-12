@@ -22,7 +22,7 @@ export default {
 <style lang="scss">
 
 @font-face {
-  font-family: "Pokefont";
+  font-family: 'Pokefont';
   src: url("@/fonts/poke-font.ttf");
 }
 
