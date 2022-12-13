@@ -42,10 +42,8 @@
 </template>
 
 <script>
-import {
-  listPokemons,
-  updatePokemon,
-} from '@/services/PokemonService';
+
+import { listPokemons, updatePokemon } from '@/services/PokemonService';
 
 export default {
   data() {
@@ -78,6 +76,7 @@ export default {
       this.updatedItem.set('imagem', file);
     },
     update() {
+      // por enquanto é preciso atualizar a imagem todas as vezes
       this.updatedItem.set('id', this.editingItem.id);
       this.updatedItem.set('nome', this.editingItem.nome);
       this.updatedItem.set('tipo', this.editingItem.tipo);
@@ -93,6 +92,7 @@ export default {
     },
   },
 };
+
 </script>
 
 <style scoped>

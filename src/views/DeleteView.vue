@@ -3,7 +3,7 @@
     <p class="pt-1 text-black text-lg">Deletar Pokémon</p>
     <ul class="h-32 mt-1 text-left">
       <li class="mb-3" v-for="(pokemon,i) in pokemonList" :key="i">
-        <a>{{ pokemon.nome }}</a>
+        <a @click="deleteFlow(pokemon.id)" @keypress="deleteFlow(pokemon.id)">{{ pokemon.nome }}</a>
       </li>
     </ul>
   </section>
@@ -11,7 +11,7 @@
 
 <script>
 
-import { listPokemons } from '@/services/PokemonService';
+import { listPokemons, deletePokemon } from '@/services/PokemonService';
 
 export default {
   data() {
@@ -22,10 +22,19 @@ export default {
   created() {
     listPokemons().then((response) => {
       this.pokemonList = response.data;
-      console.log(this.pokemonList);
     }).catch((error) => {
       console.log('erro', error);
     });
+  },
+  methods: {
+    deleteFlow(id) {
+    // exibir pop-up
+      deletePokemon((id)).then((response) => {
+        console.log(JSON.stringify(response.data));
+      }).catch((error) => {
+        console.log(error);
+      });
+    },
   },
 };
 </script>
