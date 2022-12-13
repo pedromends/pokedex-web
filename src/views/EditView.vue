@@ -1,6 +1,4 @@
-<!-- eslint-disable vuejs-accessibility/form-control-has-label -->
-<!-- eslint-disable max-len -->
-<!-- eslint-disable vuejs-accessibility/click-events-have-key-events -->
+<!-- eslint-disable -->
 <template>
   <div>
     <section class="pt-2" v-if="!editing">
@@ -28,7 +26,7 @@
         <div class="w-full pt-1 pb-1 flex justify-center items-center content-center gap-5">
           <img alt="pokemon" class="w-14" v-bind:src="`data:image/png;base64,${editingItem.imagem}`"/>
           <div>
-            <input placeholder="Imagem" accept="image/png, image/jpeg"
+            <input placeholder="Imagem" accept="image/*"
               class="w-14 text-black"
               type="file" ref='upPokeImage'
               @change="onImageUpload"
@@ -74,7 +72,6 @@ export default {
         tipo: pokemon.tipo,
         imagem: pokemon.imagem,
       };
-      this.updatedItem.append('imagem', pokemon.imagem);
     },
     onImageUpload() {
       const file = this.$refs.upPokeImage.files[0];
@@ -85,15 +82,13 @@ export default {
       this.updatedItem.set('nome', this.editingItem.nome);
       this.updatedItem.set('tipo', this.editingItem.tipo);
 
-      // console.log(this.updatedItem);
-
       updatePokemon(this.updatedItem).then((response) => {
         console.log(JSON.stringify(response));
       }).catch((error) => {
         console.log(JSON.stringify(error));
       }).finally(() => {
-        alert('Pokemon atualizado com sucesso');
         this.updatedItem = undefined;
+        this.$router.push('/');
       });
     },
   },
