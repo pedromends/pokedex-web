@@ -6,20 +6,17 @@
       <li class="mb-3" v-for="(pokemon,i) in pokemonList" :key="i">
         <v-dialog
           v-model="dialog"
-          width="500"
+          width="280"
+          light
           >
           <template v-slot:activator="{ on, attrs }">
-            <a v-bind="attrs" v-on="on" @click="deleteFlow(pokemon.id)" @keypress="deleteFlow(pokemon.id)">
+            <a  v-bind="attrs" v-on="on" @click="deleteFlow(pokemon.id)" @keypress="deleteFlow(pokemon.id)">
               {{ pokemon.nome }}
             </a>
           </template>
 
           <v-card>
-            <v-card-title class="text-h5 grey lighten-2">
-              Privacy Policy
-            </v-card-title>
-
-            <v-card-text>
+            <v-card-text class="pt-2">
               Deletado com sucesso
             </v-card-text>
 

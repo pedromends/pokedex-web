@@ -53,10 +53,7 @@ export default {
         console.log(error);
       }).finally(() => {
         alert('Pokemon registrado com sucesso');
-        this.pokeName = undefined;
-        this.pokeType = undefined;
-        this.pokeImg = undefined;
-        this.newPokemon = undefined;
+        this.$router.push('/');
       });
     },
   },
