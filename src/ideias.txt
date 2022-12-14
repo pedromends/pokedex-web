@@ -1,0 +1,5 @@
+-   trocar plano de fundo de acordo com o tipo do pokemon
+-   deixar card de exclusão transparente
+-   bolar texto destacando tailwind, SOLID, REST, etc
+-   Editar botão de upload de imagem em editar
+-   Estudar notações spring pra saber passar VO com requestparam

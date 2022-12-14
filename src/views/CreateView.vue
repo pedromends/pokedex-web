@@ -52,7 +52,6 @@ export default {
       }).catch((error) => {
         console.log(error);
       }).finally(() => {
-        alert('Pokemon registrado com sucesso');
         this.$router.push('/');
       });
     },

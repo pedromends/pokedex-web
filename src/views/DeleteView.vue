@@ -59,7 +59,6 @@ export default {
   },
   methods: {
     deleteFlow(id) {
-      // exibir pop-up
       deletePokemon((id)).then((response) => {
         console.log(JSON.stringify(response.data));
       }).catch((error) => {
