@@ -6,8 +6,7 @@
       <div class="pt-1 pb-1 grow">
           <input class="w-40 pl-1 text-black rounded-md border-solid bg-white border-gray-900 border-4"
             placeholder="Nome"
-            type="text" id="name" v-model="pokeName"
-          />
+            type="text" id="name" v-model="pokeName" />
       </div>
       <div class="pt-1 pb-1 grow">
           <input placeholder="Tipo" class="w-40 pl-1 text-black rounded-md border-solid bg-white border-gray-900 border-4" type="text" id="type" v-model="pokeType">
@@ -16,8 +15,7 @@
         <input placeholder="Imagem" accept="image/png, image/jpeg"
           class="w-40 text-xxs text-black rounded-md border-solid bg-white border-gray-900 border-4"
           type="file" ref='upPokeImage'
-          @change="onImageUpload"
-        />
+          @change="onImageUpload"/>
       </div>
     </form>
   </section>
@@ -40,14 +38,20 @@ export default {
     onImageUpload() {
       this.newPokemon = new FormData();
       const file = this.$refs.upPokeImage.files[0];
-      this.newPokemon.append('imagem', file);
-      this.submit();
-    },
-    submit() {
-      this.newPokemon.append('nome', this.pokeName);
-      this.newPokemon.append('tipo', this.pokeType);
+      // this.newPokemon.append('imagem', file);
+      this.newPokemon = {
+        image: file,
+        name: this.pokeName,
+        type: this.pokeType,
+      };
 
-      createPokemon(this.newPokemon).then((response) => {
+      this.submit(this.newPokemon);
+    },
+    submit(data) {
+      // this.newPokemon.append('nome', this.pokeName);
+      // this.newPokemon.append('tipo', this.pokeType);
+
+      createPokemon((data)).then((response) => {
         console.log(JSON.stringify(response.data));
       }).catch((error) => {
         console.log(error);

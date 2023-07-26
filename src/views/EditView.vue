@@ -98,7 +98,8 @@ export default {
 <style scoped>
 
 ul{
-  overflow:hidden; overflow-y:scroll
+  overflow:hidden;
+  overflow-y:scroll
 }
 
 a{

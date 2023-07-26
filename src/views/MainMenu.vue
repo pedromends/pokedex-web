@@ -1,6 +1,5 @@
 <template>
   <nav class="grid grid-rows-5 bg-white pt-2">
-    <!-- <router-link to="/">Home</router-link> -->
     <router-link to="/create-pokemon">Registrar Pokémon</router-link>
     <router-link to="/list-pokemon">Listar Pokémons</router-link>
     <router-link to="/edit-pokemon">Editar Pokémon</router-link>
