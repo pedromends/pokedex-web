@@ -40,7 +40,7 @@ export default {
       const file = this.$refs.upPokeImage.files[0];
       // this.newPokemon.append('imagem', file);
       this.newPokemon = {
-        image: file,
+        img: file,
         name: this.pokeName,
         type: this.pokeType,
       };
