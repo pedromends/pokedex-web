@@ -4,14 +4,10 @@
     <p class="pt-1 text-black text-lg">Deletar Pokémon</p>
     <ul class="h-32 mt-1 text-left">
       <li class="mb-3" v-for="(pokemon,i) in pokemonList" :key="i">
-        <v-dialog
-          v-model="dialog"
-          width="280"
-          light
-          >
+        <v-dialog v-model="dialog" width="280" light>
           <template v-slot:activator="{ on, attrs }">
-            <a  v-bind="attrs" v-on="on" @click="deleteFlow(pokemon.id)" @keypress="deleteFlow(pokemon.id)">
-              {{ pokemon.nome }}
+            <a v-bind="attrs" v-on="on" @click="deleteFlow(pokemon.id)" @keypress="deleteFlow(pokemon.id)">
+              {{ pokemon.name }}
             </a>
           </template>
 
@@ -24,9 +20,7 @@
 
             <v-card-actions>
               <v-spacer></v-spacer>
-              <v-btn color="primary" text @click="flowToHome">
-                Ok
-              </v-btn>
+              <v-btn color="primary" text @click="flowToHome">Ok</v-btn>
             </v-card-actions>
           </v-card>
         </v-dialog>
